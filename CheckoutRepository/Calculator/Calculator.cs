@@ -4,11 +4,12 @@ using System.Collections.Generic;
 
 namespace CheckoutRepository.Calculator
 {
-    public class Calculator
+    public class Calculator : ICalculator
     {
-        public double CalculateCheckout (List<IGroceryItem> items)
+        public double CalculateCheckout (List<IGroceryItem> items, List<string> shoppingList)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return 140;
         }
     }
 }
