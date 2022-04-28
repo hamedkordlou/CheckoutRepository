@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CommonLibrary.Models
 {
-    public interface IGroceryItem
+    public interface IWeeklyOffer
     {
     }
 }

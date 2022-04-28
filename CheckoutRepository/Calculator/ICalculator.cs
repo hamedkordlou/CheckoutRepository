@@ -7,6 +7,6 @@ namespace CheckoutRepository.Calculator
 {
     public interface ICalculator
     {
-        double CalculateCheckout(List<IGroceryItem> items, List<string> shoppingList);
+        double CalculateCheckout(List<IWeeklyOffer> items, List<string> shoppingList);
     }
 }

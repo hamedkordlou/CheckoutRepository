@@ -19,11 +19,11 @@ namespace CheckoutTests
         public void WhenArgumentNull_ThrowsArgumentNullException()
         {
             // Arrange
-            var groceryItems = new List<IGroceryItem>()
+            var groceryItems = new List<IWeeklyOffer>()
             {
-                new GroceryItem() { Name = "Apple", Cost = 30, Offer = null},
-                new GroceryItem() { Name = "Banana", Cost = 50, Offer = null},
-                new GroceryItem() { Name = "Peach", Cost = 60, Offer = null}
+                new WeeklyOffer() { Name = "Apple", Cost = 30, Offer = null},
+                new WeeklyOffer() { Name = "Banana", Cost = 50, Offer = null},
+                new WeeklyOffer() { Name = "Peach", Cost = 60, Offer = null}
             };
 
             var shoppingListWithOneItems = new List<string>() { "Apple", "Banana", "Peach" };
@@ -39,11 +39,11 @@ namespace CheckoutTests
         public void WhenBadArgument_ThrowsArgumentException()
         {
             // Arrange
-            var groceryItems = new List<IGroceryItem>()
+            var groceryItems = new List<IWeeklyOffer>()
             {
-                new GroceryItem() { Name = "Apple", Cost = -30, Offer = null},
-                new GroceryItem() { Name = "Banana", Cost = 50, Offer = null},
-                new GroceryItem() { Name = "Peach", Cost = 60, Offer = null}
+                new WeeklyOffer() { Name = "Apple", Cost = -30, Offer = null},
+                new WeeklyOffer() { Name = "Banana", Cost = 50, Offer = null},
+                new WeeklyOffer() { Name = "Peach", Cost = 60, Offer = null}
             };
 
             var shoppingListWithOneNegativeItem = new List<string>() { "Apple", "Banana", "Peach" };
@@ -59,11 +59,11 @@ namespace CheckoutTests
         public void WhenNoOffer_CheckoutShouldBeSum()
         {
             // Arrange
-            var groceryItems = new List<IGroceryItem>()
+            var groceryItems = new List<IWeeklyOffer>()
             {
-                new GroceryItem() { Name = "Apple", Cost = 30, Offer = null},
-                new GroceryItem() { Name = "Banana", Cost = 50, Offer = null},
-                new GroceryItem() { Name = "Peach", Cost = 60, Offer = null}
+                new WeeklyOffer() { Name = "Apple", Cost = 30, Offer = null},
+                new WeeklyOffer() { Name = "Banana", Cost = 50, Offer = null},
+                new WeeklyOffer() { Name = "Peach", Cost = 60, Offer = null}
             };
 
             var shoppingListWithOneItems = new List<string>() { "Apple", "Banana", "Peach" };
@@ -90,11 +90,11 @@ namespace CheckoutTests
         public void WhenThereIsOffer_AndNoneMeetCriteria_CheckoutShouldBeSum()
         {
             // Arrange
-            var groceryItems = new List<IGroceryItem>()
+            var groceryItems = new List<IWeeklyOffer>()
             {
-                new GroceryItem() { Name = "Apple", Cost = 30, Offer = new Tuple<decimal, double>(2, 45) },
-                new GroceryItem() { Name = "Banana", Cost = 50, Offer = null},
-                new GroceryItem() { Name = "Peach", Cost = 60, Offer = null}
+                new WeeklyOffer() { Name = "Apple", Cost = 30, Offer = new Tuple<int, double>(2, 45) },
+                new WeeklyOffer() { Name = "Banana", Cost = 50, Offer = null},
+                new WeeklyOffer() { Name = "Peach", Cost = 60, Offer = null}
             };
 
             var shoppingListWithTwoApples = new List<string>() { "Apple", "Banana", "Peach", "Peach" };
@@ -117,11 +117,11 @@ namespace CheckoutTests
         public void WhenThereIsOffer_AndSomeMeetCriteria_CheckoutShouldConciderMeetingOffers()
         {
             // Arrange
-            var groceryItems = new List<IGroceryItem>()
+            var groceryItems = new List<IWeeklyOffer>()
             {
-                new GroceryItem() { Name = "Apple", Cost = 30, Offer = new Tuple<decimal, double>(2, 45) },
-                new GroceryItem() { Name = "Banana", Cost = 50, Offer = null},
-                new GroceryItem() { Name = "Peach", Cost = 60, Offer = null}
+                new WeeklyOffer() { Name = "Apple", Cost = 30, Offer = new Tuple<int, double>(2, 45) },
+                new WeeklyOffer() { Name = "Banana", Cost = 50, Offer = null},
+                new WeeklyOffer() { Name = "Peach", Cost = 60, Offer = null}
             };
 
             var shoppingListWithThreeApples = new List<string>() { "Apple", "Banana", "Apple", "Peach", "Apple" };
@@ -144,11 +144,11 @@ namespace CheckoutTests
         public void WhenThereAreOffers_AndSomeMeetCriteria_CheckoutShouldConciderMeetingOffers()
         {
             // Arrange
-            var groceryItems = new List<IGroceryItem>()
+            var groceryItems = new List<IWeeklyOffer>()
             {
-                new GroceryItem() { Name = "Apple", Cost = 30, Offer = new Tuple<decimal, double>(2, 45) },
-                new GroceryItem() { Name = "Banana", Cost = 50, Offer = new Tuple<decimal, double>(3, 130)},
-                new GroceryItem() { Name = "Peach", Cost = 60, Offer = null}
+                new WeeklyOffer() { Name = "Apple", Cost = 30, Offer = new Tuple<int, double>(2, 45) },
+                new WeeklyOffer() { Name = "Banana", Cost = 50, Offer = new Tuple<int, double>(3, 130)},
+                new WeeklyOffer() { Name = "Peach", Cost = 60, Offer = null}
             };
 
             var shoppingListMeetingOneOffer = new List<string>() { "Apple", "Banana", "Peach", "Apple" };
